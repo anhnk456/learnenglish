@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>VOCABULARY</title>
+
+   <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="">
+    <!-- header section strats -->
+    <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold;"> Chủ Đề </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/tuvung/" style="font-weight: bold; color: black;">Từ Vựng</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/nguphap/" style="font-weight: bold;">Ngữ Pháp</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyendoc/">Luyện Đọc</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennghe/">Luyện Nghe</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennoi/">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Bài Kiểm Tra </a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+
+       <h1 class="display-1" style="text-align: center;font-weight: bold; ">VOCABULARY </h1>
+<div class="common_style">
+<section class="about_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about_img-container">
+              <img src="http://www.middleweb.com/wp-content/uploads/2019/03/word-study_png.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about_detail-box">
+
+              <p>
+                Từ vựng hay vốn từ, kho từ vựng của một người là tập hợp các từ trong một ngôn ngữ mà người đó quen thuộc.
+                  Vốn từ vựng thường xuyên tăng lên theo tuổi tác,
+                  và là công cụ cơ bản và hữu dụng trong giao tiếp và thu nhận kiến thức
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+<div class="container">
+  <h2>Từ vựng</h2>
+        <div style="display: flex;justify-content: space-between">
+          <h4>Tổng hợp các từ vựng của tất cả chủ đề</h4>
+          <a href="http://127.0.0.1:8000/addnewword/" class="btn btn-primary">Thêm từ mới</a>
+        </div>
+        <br/>
+  <input class="form-control" id="myInput" type="text" placeholder="Search.." style="width: 500px">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+          <th>Chủ đề</th>
+        <th>Tên tiếng anh</th>
+        <th>Nghĩa tiếng việt</th>
+        <th>Phát âm</th>
+          <th>File âm thanh</th>
+      </tr>
+    </thead>
+    <tbody id="myTable">
+    {% for item in newword %}
+      <tr>
+          <td>{{item.Topic}}</td>
+    <td>
+      <a href="http://127.0.0.1:8000/chude/education/{{item.id}}"> {{item.TenTA}}  </a>
+    </td>
+    <td>{{item.NghiaTV}}</td>
+    <td>{{item.PhatAm}}</td>
+    <td>
+      <audio controls>
+        <source src="{{item.Sound}}">
+      </audio>
+    </td>
+  </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+    </div>
+  </div>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</html>

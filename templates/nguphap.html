@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>GRAMMARS</title>
+
+   <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="">
+    <!-- header section strats -->
+
+    <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold;"> Chủ Đề </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/tuvung/" style="font-weight: bold;">Từ Vựng</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/nguphap/" style="font-weight: bold; color: black;">Ngữ Pháp</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyendoc/">Luyện Đọc</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennghe/">Luyện Nghe</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennoi/">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Bài Kiểm Tra </a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+
+       <h1 class="display-1" style="text-align: center;font-weight: bold; ">GRAMMARS </h1>
+<div class="common_style">
+<section class="about_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about_img-container">
+              <img src="data:image/png;base64,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" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about_detail-box">
+
+              <p>
+                Ngữ pháp tiếng Anh là cấu trúc về ngữ pháp trong tiếng Anh chỉ sự đặt câu đúng trật tự,
+                  đúng quan hệ và hài hòa giữa các từ, yếu tố để tạo nên một câu văn hoàn chỉnh, quy phạm nhằm truyền đạt
+                  thông tin một cách chính xác, bài bản và khoa học nhất.
+                  Ngữ pháp tiếng Anh có thể khái quát thành dạng trong câu, sự hài hòa giữa các yếu tố trong câu
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+      <div class="container">
+          {% for item in nguphap %}
+            </br>
+          <h1><p>{{item.TenNguPhap}}</p></h1>
+          <pre>
+            {{item.NoiDung}}
+          </pre>
+          {% endfor %}
+      </div>
+</html>

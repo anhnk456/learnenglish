@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+
+
+  <title>English For Life - Listening</title>
+
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="">
+    <!-- header section strats -->
+       <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold;"> Chủ Đề </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/tuvung/" style="font-weight: bold;">Từ Vựng</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/nguphap/" style="font-weight: bold; ">Ngữ Pháp</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold; color: black;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyendoc/">Luyện Đọc</a>
+                    <a class="dropdown-item active" href="http://127.0.0.1:8000/luyennghe/">Luyện Nghe</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennoi/">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Bài Kiểm Tra </a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+      </div>
+ <h1 class="display-1" style="text-align: center;font-weight: bold; ">LISTENING </h1>
+<div class="container" style="display: flex;justify-content: space-around;">
+  <div style="flex: 1; padding-left: 4rem">
+    <form method="get" action="http://127.0.0.1:8000/luyennghe/ss/">
+      <div style="display: flex; justify-content: space-between; width:300px;">
+        <input type="text" name="inp" value="{{sound.DapAn}}{{sound2}}{{sound3.DapAn}}" hidden="hidden">
+        <button type="submit" style="width:200px;" class="btn btn-outline-secondary"><i class="fas fa-volume-up"></i></button>
+        <a href="http://127.0.0.1:8000/luyennghe/" class="btn btn-outline-secondary btn-sm" style="width:80px;line-height:40px"><i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+    </form>
+    <form method="post" action="http://127.0.0.1:8000/luyennghe/" enctype="multipart/form-data">
+      {% csrf_token %}
+      </br>
+      <textarea name="check" style="width:300px;font-weight:900; height:100px" placeholder="Nhập nội dung bạn nghe được"></textarea>
+      </br> </br>
+      <div style="display: flex;justify-content: space-between; width:300px;">
+        <button type="submit" class="btn btn-primary" style="width:140px">Kiểm Tra</button>
+        <a class="btn btn-primary" style="width:140px; color:white" id="bt1">Hiển thị từ </a>
+      </div>
+
+    </form>
+    <h1 style="color:black;">{{percent}} {{test}}</h1>
+    <h2 style="color:black; display:none;" id="bt2">{{sound.DapAn}}{{sound2}}{{sound3.DapAn}}</h2>
+    <script>
+               var button1 = document.getElementById("bt1");
+               var button2 = document.getElementById("bt2");
+               button1.onclick = function () {
+                      button2.style.display = "block";
+                  };
+    </script>
+  </div>
+  <div style="flex: 1">
+    <img src="https://us.123rf.com/450wm/passengerz/passengerz1609/passengerz160900006/64645746-icons-of-one-of-five-senses-hearing-children-vector-illustration-of-boy-in-red-t-shirt-who-bulge-ear.jpg?ver=6" class="img-thumbnail" alt="Cinque Terre">
+  </div>
+</div>
+</body>
+</html>

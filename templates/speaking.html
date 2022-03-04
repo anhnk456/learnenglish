@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>English For Life - Speaking</title>
+
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+
+
+.button {
+  background-color: #0020C2;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+
+.button5 {font-size: 24px;}
+</style>
+</head>
+<body>
+<div class="">
+    <!-- header section strats -->
+       <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold;"> Chủ Đề </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/tuvung/" style="font-weight: bold;">Từ Vựng</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/nguphap/" style="font-weight: bold; ">Ngữ Pháp</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold; color: black;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyendoc/">Luyện Đọc</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennghe/">Luyện Nghe</a>
+                    <a class="dropdown-item active" href="http://127.0.0.1:8000/luyennoi/">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Bài Kiểm Tra </a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+      </div>
+ <h1 class="display-1" style="text-align: center;font-weight: bold; ">SPEAKING </h1>
+<div class="container" style="display: flex;justify-content: space-around">
+
+    <div style="flex: 1; ">
+    <h1> Từ Cần Nói: {{oneword.DapAn}} {{speak.DapAn}}</h1> </br>
+    <h1> Phát âm: {{oneword.CachDoc}} {{speak.CachDoc}}</h1>
+    <form method="post">
+        {% csrf_token %}
+    <input type="hidden" name="record">
+        <div style="display: flex; justify-content: space-between; width:300px;">
+        <div>
+    <button style="width:200px; height:50px;" id="bt1" class="btn btn-outline-secondary"><i class="fas fa-microphone"></i></button>
+         </div>
+        <div>
+        <a href="http://127.0.0.1:8000/luyennoi/" class="btn btn-outline-secondary btn-sm" style="width:80px;line-height:40px"><i class="fas fa-long-arrow-alt-right"></i></a>
+   </div>
+  </div>
+    </form>
+        <script>
+             var button1 = document.getElementById("bt1");
+             button1.onclick = function () {
+                    button1.style.border = "solid red 1px";
+                };
+        </script>
+    <br/>
+    <br/>
+    <br/>
+        <h1 style="color:black;"> {{data}}</h1>
+    </div>
+    <div style="flex: 1;" >
+        <img src="https://hoc247.net/fckeditorimg/upload/images/trac-nghiem-tieng-anh-6-canh-dieu-unit-7-communication-exercise-2.png"
+             class="img-thumbnail" alt="Cinque Terre" width="100%" height="100%" style="height: 75%">
+    </div>
+</div>
+</body>
+</html>

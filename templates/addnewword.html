@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddNewWord</title>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Add NewWord</title>
+
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="">
+    <!-- header section strats -->
+       <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold;"> Chủ Đề </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/tuvung/" style="font-weight: bold;">Từ Vựng</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/nguphap/" style="font-weight: bold; ">Ngữ Pháp</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyendoc/">Luyện Đọc</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennghe/">Luyện Nghe</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennoi/">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Bài Kiểm Tra </a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+</div>
+<div class="container">
+  <div class="jumbotron">
+    <h1 align="center">Thêm từ mới</h1>
+    <p>Từ mới do người dùng thêm sẽ không hiển thị cho người dùng khác. </br>Từ mới này chỉ có thể hiện thị cho người dùng
+        khác khi mà hệ thống duyệt từ mới do người dùng thêm vào là từ chính xác</p>
+  </div>
+    <form class="form-contact" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="topic" style="width:150px">Chủ Đề</label>
+        <select name="topic" id="topic">
+            {% for item in topic_list %}
+                <option value="{{item.id}}">----{{item.Chude}}----</option>
+            {% endfor %}
+        </select></br>
+
+        <label for="TenTA" style="width:150px">Tên tiếng anh</label>
+        <input type="text" name="TenTA"></br>
+
+        <label for="NghiaTV" style="width:150px">Nghĩa tiếng việt</label>
+        <input type="text" name="NghiaTV"></br>
+
+        <label for="pos" style="width:150px">Loại Từ</label>
+        <select name="pos" id="pos">
+            {% for item in pos_list %}
+                <option value="{{item.id}}">----{{item.Tuloai}}----</option>
+            {% endfor %}
+        </select></br>
+
+        <label for="VdTA" style="width:150px">Ví dụ tiếng anh</label>
+        <input type="text" name="VdTA"></br>
+
+        <label for="VdTV" style="width:150px">Ví dụ tiếng việt</label>
+        <input type="text" name="VdTV"></br>
+
+        <label for="PhatAm" style="width:150px">Phát âm</label>
+        <input type="text" name="PhatAm"></br>
+
+        <label for="Sound" style="width:150px">File Âm Thanh</label>
+        <input type="text" name="Sound"></br>
+
+        <button class="btn btn-primary" type="submit" style="margin-top:20px" >Thêm</button>
+    </form>
+</div>
+</body>
+</html>

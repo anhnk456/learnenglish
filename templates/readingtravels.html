@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+
+
+  <title>English For Life - Reading</title>
+
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="">
+    <!-- header section strats -->
+       <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"> Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold;"> Chủ Đề </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/tuvung/" style="font-weight: bold;">Từ Vựng</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000/nguphap/" style="font-weight: bold; ">Ngữ Pháp</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold; color: black;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item active" href="http://127.0.0.1:8000/luyendoc/">Luyện Đọc</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennghe/">Luyện Nghe</a>
+                    <a class="dropdown-item" href="http://127.0.0.1:8000/luyennoi/">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Bài Kiểm Tra </a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+      </div>
+<h1 class="display-1" style="text-align: center;font-weight: bold; ">TRAVELS </h1>
+<div class="common_style">
+<section class="about_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about_img-container">
+              <img src="https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-cartoon-cartoon-airplane-aircraft-aviation-png-image_479564.jpg" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about_detail-box">
+              <h3>
+                Travels
+              </h3>
+              <p>
+                Có lẽ phần đông chúng ta đều thích đi đây đi đó, đi du lịch nhất là nước ngoài.
+                Nhưng bạn sẽ phân vân lo lắng vì không biết dịch tiếng Anh hay giao tiếp bằng tiếng Anh
+                khi đi du lịch sẽ như thế nào? Vậy bạn hay tham khảo một số đoạn hội thoại chủ đề về du lịch dưới đây nhé!
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</div>
+<div class="container">
+  <div style="display: flex; justify-content: space-between">
+    <h2>Nội dung bài đọc</h2>
+    <a href="http://127.0.0.1:8000/luyendoc/travels/" class="btn btn-primary" style="height:40px">Đổi bài đọc</a>
+  </div>
+
+  <pre>{{read.NoiDungTA}}</pre>
+
+
+ <h2>Câu hỏi</h2>
+    {% for item in question %}
+      {% if item.Exams == read.Exams %}
+        <div >
+          </br> <b>{{item.CauHoi}}</b></br>
+        </div>
+        <input type="checkbox" value="Name" name="cauhoi" /> {{item.DapAnA}} <br/>
+        <input type="checkbox" value="Nữ" name="cauhoi" /> {{item.DapAnB}}   <br/>
+        <input type="checkbox" value="Nữ" name="cauhoi" /> {{item.DapAnC}}   <br/>
+        <input type="checkbox" value="Nữ" name="cauhoi" /> {{item.DapAnD}}   <br/>
+  <label style="display: none; color:black" class="example"> <b>{{item.DapAnDung}}</b> </label>
+        <script>
+
+              function myFunction() {
+            var x = document.getElementsByClassName("example");
+            x[0].style.display = "inline";
+            x[1].style.display = "inline";
+            x[2].style.display = "inline";
+            x[3].style.display = "inline";
+
+                                    }
+        </script>
+      {% endif %}
+    {% endfor %}
+      </br>
+      <button onclick="myFunction()">Kiểm Tra Đáp Án</button>
+
+</div>
+</body>
+</html>

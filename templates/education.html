@@ -1,0 +1,149 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Education</title>
+
+   <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/bootstrap.css' %}" />
+  <!-- progress barstle -->
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,600&display=swap" rel="stylesheet">
+  <!-- font wesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="{% static 'homepage/css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'homepage/css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="">
+    <!-- header section strats -->
+    <header class="header_section" style="background-color: orange;">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ENGFORLIFE
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item">
+                  <a class="nav-link" href="http://127.0.0.1:8000" style="font-weight: bold;"> Home </a>
+                </li>
+                <li class="nav-item active ">
+                  <a class="nav-link" href="http://127.0.0.1:8000/chude/" style="font-weight: bold; color: black;"> Chủ Đề <span class="sr-only">(current)</span> </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="font-weight: bold;">
+                    Luyện
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Luyện Đọc</a>
+                    <a class="dropdown-item" href="#">Luyện Nghe</a>
+                    <a class="dropdown-item" href="#">Luyện Nói</a>
+                  </div>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#" style="font-weight: bold;"> Why Us </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html" style="font-weight: bold;">Contact Us</a>
+                </li>
+
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+
+       <h1 class="display-1" style="text-align: center;font-weight: bold; ">EDUCATION </h1>
+<div class="common_style">
+<section class="about_section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about_img-container">
+              <img src="{% static 'homepage/images/1-555.jpg' %}" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about_detail-box">
+
+              <p>
+                Chủ đề Education là một chủ đề khá là quen thuộc với tất cả chúng ta trong đời sống hằng
+                ngày cũng như trong các bài thi và đặc biệt đây là chủ đề quan trọng và rất được ưa chuộng trong các kì thi IELTS gần đây.
+                Vì  thế, việc bổ sung thêm từ vựng và kiến thức cho chủ đề này là vô cùng cần thiết nhé các bạn
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+      <div class="container">
+  <h2>Từ vựng</h2>
+        <div style="display: flex;justify-content: space-between">
+          <h4>Một số từ vựng thường gặp trong chủ đề Education</h4>
+          <a href="http://127.0.0.1:8000/addnewword/" class="btn btn-primary">Thêm từ mới</a>
+        </div>
+        <br/>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tên tiếng anh</th>
+        <th>Nghĩa tiếng việt</th>
+        <th>Phát âm</th>
+          <th>File âm thanh</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in newword %}
+      <tr>
+    <td>
+      <a href="http://127.0.0.1:8000/chude/education/{{item.id}}"> {{item.TenTA}}  </a>
+    </td>
+    <td>{{item.NghiaTV}}</td>
+    <td>{{item.PhatAm}}</td>
+    <td>
+      <audio controls>
+        <source src="{{item.Sound}}">
+      </audio>
+    </td>
+  </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+    </div>
+  </div>
+</body>
+</html>
