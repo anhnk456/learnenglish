@@ -8,7 +8,6 @@ from user.models import CustomerUser
 
 class Topic(models.Model):
     Chude= models.CharField(max_length=255, blank=True, null=True)
-    Mota = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
         #return self.Chude
